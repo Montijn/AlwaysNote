@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		D095403A29C9D54E00B33A64 /* AlwaysNoteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095403929C9D54E00B33A64 /* AlwaysNoteApp.swift */; };
-		D095403C29C9D54E00B33A64 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095403B29C9D54E00B33A64 /* ContentView.swift */; };
 		D095403E29C9D54E00B33A64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D095403D29C9D54E00B33A64 /* Assets.xcassets */; };
 		D095404229C9D54E00B33A64 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D095404129C9D54E00B33A64 /* Preview Assets.xcassets */; };
 		D095404C29C9D54E00B33A64 /* AlwaysNoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095404B29C9D54E00B33A64 /* AlwaysNoteTests.swift */; };
 		D095405629C9D54E00B33A64 /* AlwaysNoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095405529C9D54E00B33A64 /* AlwaysNoteUITests.swift */; };
 		D095405829C9D54E00B33A64 /* AlwaysNoteUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095405729C9D54E00B33A64 /* AlwaysNoteUITestsLaunchTests.swift */; };
+		D095406C29C9D9DF00B33A64 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D095406B29C9D9DF00B33A64 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* Begin PBXFileReference section */
 		D095403629C9D54E00B33A64 /* AlwaysNote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AlwaysNote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D095403929C9D54E00B33A64 /* AlwaysNoteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwaysNoteApp.swift; sourceTree = "<group>"; };
-		D095403B29C9D54E00B33A64 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D095403D29C9D54E00B33A64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D095403F29C9D54E00B33A64 /* AlwaysNote.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AlwaysNote.entitlements; sourceTree = "<group>"; };
 		D095404129C9D54E00B33A64 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -45,6 +44,7 @@
 		D095405129C9D54E00B33A64 /* AlwaysNoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlwaysNoteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D095405529C9D54E00B33A64 /* AlwaysNoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwaysNoteUITests.swift; sourceTree = "<group>"; };
 		D095405729C9D54E00B33A64 /* AlwaysNoteUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlwaysNoteUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D095406B29C9D9DF00B33A64 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,10 +95,8 @@
 		D095403829C9D54E00B33A64 /* AlwaysNote */ = {
 			isa = PBXGroup;
 			children = (
-				D095403929C9D54E00B33A64 /* AlwaysNoteApp.swift */,
-				D095403B29C9D54E00B33A64 /* ContentView.swift */,
-				D095403D29C9D54E00B33A64 /* Assets.xcassets */,
-				D095403F29C9D54E00B33A64 /* AlwaysNote.entitlements */,
+				D095406429C9D57600B33A64 /* Resources */,
+				D095406B29C9D9DF00B33A64 /* ContentView.swift */,
 				D095404029C9D54E00B33A64 /* Preview Content */,
 			);
 			path = AlwaysNote;
@@ -127,6 +125,16 @@
 				D095405729C9D54E00B33A64 /* AlwaysNoteUITestsLaunchTests.swift */,
 			);
 			path = AlwaysNoteUITests;
+			sourceTree = "<group>";
+		};
+		D095406429C9D57600B33A64 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D095403F29C9D54E00B33A64 /* AlwaysNote.entitlements */,
+				D095403D29C9D54E00B33A64 /* Assets.xcassets */,
+				D095403929C9D54E00B33A64 /* AlwaysNoteApp.swift */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D095403C29C9D54E00B33A64 /* ContentView.swift in Sources */,
+				D095406C29C9D9DF00B33A64 /* ContentView.swift in Sources */,
 				D095403A29C9D54E00B33A64 /* AlwaysNoteApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
