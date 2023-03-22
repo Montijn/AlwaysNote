@@ -3,22 +3,31 @@ import SwiftUI
 
 
 struct ContentView: View {
+    static let fontSizeDefault = 17.0
     @State private var fontSize = Self.fontSizeDefault {
         didSet{
             UserDefaults.standard.set(fontSize, forKey: fontSizeKey)
         }
     }
-    @State var noteContents = "Lief dagboek, \n\nVandaag heb ik op avans een kut opdracht gemaakt"
+    @State var noteContents = "Lief dagboek, \n\nVandaag heb ik op avans een opdracht gemaakt"
+    @State private var showAlert = false
     let fontSizeKey = "nl.avans.alwaysnote.fontsize"
-    static let fontSizeDefault = 17.0
+    let fileName = "Always-note"
+    
     var body: some View {
         VStack{
-            titleView
-            buttonView
-        }.padding()
-        VStack{
-            editorView
-        }.padding()
+            VStack{
+                titleView
+                buttonView
+            }.padding()
+            Spacer()
+            VStack{
+                editorView
+            }.padding()
+        }.onAppear(perform: initView)
+            .alert(isPresented: $showAlert,
+                   content: {Alert(title: Text("Your note has been stored"))})
+        
     }
     
     var titleView: some View {
@@ -32,7 +41,7 @@ struct ContentView: View {
     var buttonView: some View {
         HStack{
             Button("Save") {
-                /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Action@*/ /*@END_MENU_TOKEN@*/
+               save()
             }
             Button("a") {
                 decreaseFont()
@@ -60,6 +69,8 @@ struct ContentView: View {
                 .font(.custom("Hoefler Text ", size: CGFloat(fontSize)))
         }
     }
+    
+    
     func initView(){
         let defaults = UserDefaults.standard
         if defaults.object(forKey: fontSizeKey) == nil {
@@ -67,10 +78,27 @@ struct ContentView: View {
         } else {
             fontSize = defaults.double(forKey: fontSizeKey)
         }
+        do{
+            let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            let fileURL = documentDirectory.appendingPathComponent(fileName)
+            noteContents = try String(contentsOf: fileURL)
+        } catch {}
     
     }
     
+    func save(){
+        do{
+            let documentDirectory = try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+            let fileURL = documentDirectory.appendingPathComponent(fileName)
+            try noteContents.write(to: fileURL, atomically: true, encoding: String.Encoding.unicode)
+        } catch {}
+        showAlert = true
+    }
 }
+
+
+
+
 
 
 
